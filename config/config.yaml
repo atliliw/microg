@@ -1,0 +1,41 @@
+# Microg 服务配置文件示例
+
+# 服务基础配置
+service:
+  name: demo-service       # 服务名称
+  id: ""                   # 服务ID（空则自动生成UUID）
+  
+# gRPC 服务器配置
+grpc:
+  address: ":9000"         # 监听地址
+  timeout: 30s             # 请求超时时间
+  metrics: true            # 启用 Prometheus 指标
+
+# HTTP 服务器配置  
+http:
+  port: 8080               # 监听端口
+  mode: release            # 运行模式: debug/release
+  healthz: true            # 启用健康检查 /health
+  pprof: true              # 启用性能分析 /debug/pprof
+  metrics: true            # 启用 Prometheus 指标 /metrics
+
+# Consul 服务注册配置
+consul:
+  address: "192.168.10.100:8500"
+  enabled: true               # 是否启用服务注册
+  health_check: true          # 启用健康检查
+  heartbeat: true             # 启用心跳
+  health_check_interval: 10   # 健康检查间隔(秒)
+  deregister_critical_after: 600  # 服务失效后注销时间(秒)
+
+# Jaeger 链路追踪配置
+tracing:
+  enabled: true
+  endpoint: "http://192.168.10.100:14268/api/traces"
+  sampler: 1.0                        # 采样率 (0.0-1.0)
+  batcher: jaeger                     # 采集器类型: jaeger/zipkin
+
+# 日志配置
+log:
+  level: info             # 日志级别: debug/info/warn/error
+  format: json            # 输出格式: json/console

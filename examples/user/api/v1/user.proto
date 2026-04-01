@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "microg/examples/user/api/v1;v1";
+
+import "google/protobuf/empty.proto";
+
+// 用户服务 - 演示完整的 CRUD 操作
+service User {
+    // 获取用户列表 (分页)
+    rpc GetUserList(PageInfo) returns (UserListResponse);
+    
+    // 通过手机号查询用户
+    rpc GetUserByMobile(MobileRequest) returns (UserInfoResponse);
+    
+    // 通过ID查询用户
+    rpc GetUserById(IdRequest) returns (UserInfoResponse);
+    
+    // 创建用户
+    rpc CreateUser(CreateUserInfo) returns (UserInfoResponse);
+    
+    // 更新用户
+    rpc UpdateUser(UpdateUserInfo) returns (google.protobuf.Empty);
+    
+    // 检查密码
+    rpc CheckPassWord(PasswordCheckInfo) returns (CheckResponse);
+}
+
+// 分页信息
+message PageInfo {
+    uint32 pn = 1;     // 页码
+    uint32 pSize = 2;  // 每页数量
+}
+
+// 手机号请求
+message MobileRequest {
+    string mobile = 1;
+}
+
+// ID请求
+message IdRequest {
+    int32 id = 1;
+}
+
+// 创建用户信息
+message CreateUserInfo {
+    string nickName = 1;
+    string passWord = 2;
+    string mobile = 3;
+}
+
+// 更新用户信息
+message UpdateUserInfo {
+    int32 id = 1;
+    string nickName = 2;
+    string gender = 3;
+    uint64 birthDay = 4;
+}
+
+// 用户信息响应
+message UserInfoResponse {
+    int32 id = 1;
+    string passWord = 2;
+    string mobile = 3;
+    string nickName = 4;
+    uint64 birthDay = 5;
+    string gender = 6;
+    int32 role = 7;
+}
+
+// 用户列表响应
+message UserListResponse {
+    int32 total = 1;
+    repeated UserInfoResponse data = 2;
+}
+
+// 密码检查信息
+message PasswordCheckInfo {
+    string password = 1;
+    string encryptedPassword = 2;
+}
+
+// 检查响应
+message CheckResponse {
+    bool success = 1;
+}

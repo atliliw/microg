@@ -1,0 +1,19 @@
+service:
+  name: user-client
+
+http:
+  port: 8081
+  mode: debug
+  healthz: true
+  metrics: true
+
+consul:
+  address: "192.168.10.100:8500"
+  enabled: true
+
+user_srv:
+  name: "user-srv"
+
+log:
+  level: debug
+  format: console

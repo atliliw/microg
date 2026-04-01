@@ -1,0 +1,33 @@
+service:
+  name: user-srv
+
+grpc:
+  address: ":9001"
+  timeout: 30s
+  metrics: true
+
+consul:
+  address: "192.168.10.100:8500"
+  enabled: true
+  health_check: true
+  heartbeat: true
+  health_check_interval: 10
+
+tracing:
+  enabled: false
+  endpoint: "http://192.168.10.100:14268/api/traces"
+  sampler: 1.0
+  batcher: jaeger
+
+log:
+  level: debug
+  format: console
+
+mysql:
+  host: "192.168.10.100"
+  port: 3306
+  username: "root"
+  password: "root"
+  database: "microg_user"
+  max_idle_conns: 10
+  max_open_conns: 100
