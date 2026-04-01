@@ -4,6 +4,7 @@ import (
 	"context"
 	"io"
 
+	trace2 "github.com/atliliw/microg/core/trace"
 	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"
@@ -13,7 +14,6 @@ import (
 	gcodes "google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
-	trace2 "microg/core/trace"
 )
 
 const (

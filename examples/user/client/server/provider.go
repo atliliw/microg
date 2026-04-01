@@ -1,11 +1,11 @@
 package server
 
 import (
-	"microg/examples/user/client/config"
-	"microg/examples/user/client/controller"
-	"microg/pkg/common/core"
-	"microg/pkg/log"
-	"microg/server/restserver"
+	"github.com/atliliw/microg/examples/user/client/config"
+	"github.com/atliliw/microg/examples/user/client/controller"
+	"github.com/atliliw/microg/pkg/common/core"
+	"github.com/atliliw/microg/pkg/log"
+	"github.com/atliliw/microg/server/restserver"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"

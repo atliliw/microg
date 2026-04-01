@@ -3,7 +3,7 @@ package selector
 import (
 	"strconv"
 
-	"microg/registry"
+	"github.com/atliliw/microg/registry"
 )
 
 // DefaultNode is selector node

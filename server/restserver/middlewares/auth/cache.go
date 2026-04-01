@@ -2,12 +2,12 @@ package auth
 
 import (
 	"fmt"
-	"microg/examples/code"
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/examples/code"
+	"github.com/atliliw/microg/pkg/errors"
 	"net/http"
 	"time"
 
-	"microg/server/restserver/middlewares"
+	"github.com/atliliw/microg/server/restserver/middlewares"
 
 	jwt "github.com/dgrijalva/jwt-go/v4"
 	"github.com/gin-gonic/gin"

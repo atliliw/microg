@@ -1,4 +1,4 @@
-﻿package validation
+package validation
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unicode"
 
-	"microg/pkg/common/validation/field"
+	"github.com/atliliw/microg/pkg/common/validation/field"
 )
 
 const (

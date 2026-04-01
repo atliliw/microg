@@ -1,7 +1,7 @@
 package test
 
 import (
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/pkg/errors"
 	"net/http"
 
 	"github.com/novalagung/gubrak"

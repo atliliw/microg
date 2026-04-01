@@ -4,11 +4,11 @@
 package main
 
 import (
-	"microg/examples/user/srv/config"
-	"microg/examples/user/srv/data"
-	"microg/examples/user/srv/server"
-	"microg/examples/user/srv/service"
-	"microg/examples/user/srv/controller"
+	"github.com/atliliw/microg/examples/user/srv/config"
+	"github.com/atliliw/microg/examples/user/srv/controller"
+	"github.com/atliliw/microg/examples/user/srv/data"
+	"github.com/atliliw/microg/examples/user/srv/server"
+	"github.com/atliliw/microg/examples/user/srv/service"
 
 	"github.com/google/wire"
 )

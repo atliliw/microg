@@ -8,10 +8,10 @@ import (
 	"google.golang.org/grpc"
 	grpcinsecure "google.golang.org/grpc/credentials/insecure"
 
-	"microg/pkg/log"
-	"microg/registry"
-	"microg/server/rpcserver/clientinterceptors"
-	"microg/server/rpcserver/resolver/discovery"
+	"github.com/atliliw/microg/pkg/log"
+	"github.com/atliliw/microg/registry"
+	"github.com/atliliw/microg/server/rpcserver/clientinterceptors"
+	"github.com/atliliw/microg/server/rpcserver/resolver/discovery"
 )
 
 // ClientOption gRPC 客户端配置选项函数

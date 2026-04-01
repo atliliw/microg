@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright 2014 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +26,8 @@ import (
 	"testing"
 	"time"
 
-	"microg/pkg/common/util/clock"
-	"microg/pkg/common/util/runtime"
+	"github.com/atliliw/microg/pkg/common/util/clock"
+	"github.com/atliliw/microg/pkg/common/util/runtime"
 )
 
 func TestUntil(t *testing.T) {

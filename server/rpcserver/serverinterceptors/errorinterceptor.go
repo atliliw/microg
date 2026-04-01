@@ -2,7 +2,7 @@ package serverinterceptors
 
 import (
 	"context"
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/pkg/errors"
 	"strconv"
 
 	"google.golang.org/genproto/googleapis/rpc/errdetails"

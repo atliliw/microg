@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/atliliw/microg/registry"
 	"github.com/hashicorp/consul/api"
-	"microg/registry"
 )
 
 func tcpServer(t *testing.T, lis net.Listener) {

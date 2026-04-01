@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"microg/pkg/log"
+	"github.com/atliliw/microg/pkg/log"
 
-	_ "microg/examples/user/code"
+	_ "github.com/atliliw/microg/examples/user/code"
 )
 
 func main() {
@@ -14,9 +13,11 @@ func main() {
 	}
 	defer cleanup()
 
-	fmt.Printf("启动用户 gRPC 服务 %s...\n", app.Cfg.Service.Name)
-	fmt.Printf("gRPC 监听: %s\n", app.Cfg.GRPC.Address)
-	fmt.Printf("Consul 地址: %s\n", app.Cfg.Consul.Address)
+	log.Info("启动用户 gRPC 服务",
+		log.String("service", app.Cfg.Service.Name),
+		log.String("grpc_address", app.Cfg.GRPC.Address),
+		log.String("consul_address", app.Cfg.Consul.Address),
+	)
 
 	if err := app.Application.Run(); err != nil {
 		log.Fatalf("服务启动失败: %v", err)

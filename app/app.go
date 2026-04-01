@@ -14,9 +14,9 @@ import (
 	"github.com/google/uuid"
 	"golang.org/x/sync/errgroup"
 
-	"microg/pkg/log"
-	"microg/registry"
-	gs "microg/server"
+	"github.com/atliliw/microg/pkg/log"
+	"github.com/atliliw/microg/registry"
+	gs "github.com/atliliw/microg/server"
 )
 
 // App 是微服务应用的核心结构体

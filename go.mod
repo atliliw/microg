@@ -1,4 +1,4 @@
-module microg
+module github.com/atliliw/microg
 
 go 1.24.7
 

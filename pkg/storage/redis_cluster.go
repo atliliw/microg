@@ -13,9 +13,9 @@ import (
 	redis "github.com/go-redis/redis/v9"
 	uuid "github.com/satori/go.uuid"
 	"github.com/spf13/viper"
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/pkg/errors"
 
-	"microg/pkg/log"
+	"github.com/atliliw/microg/pkg/log"
 )
 
 // Config defines options for redis cluster.

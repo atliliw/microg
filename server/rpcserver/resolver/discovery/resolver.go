@@ -11,8 +11,8 @@ import (
 	"google.golang.org/grpc/attributes"
 	"google.golang.org/grpc/resolver"
 
-	"microg/pkg/log"
-	"microg/registry"
+	"github.com/atliliw/microg/pkg/log"
+	"github.com/atliliw/microg/registry"
 )
 
 // discoveryResolver 实现 resolver.Resolver 接口

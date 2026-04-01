@@ -1,9 +1,9 @@
-﻿package runtime
+package runtime
 
 import (
 	"fmt"
 
-	"microg/pkg/common/json"
+	"github.com/atliliw/microg/pkg/common/json"
 )
 
 // NegotiateError is returned when a ClientNegotiator is unable to locate

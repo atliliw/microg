@@ -23,7 +23,7 @@ import (
 
 	"google.golang.org/grpc/resolver"
 
-	"microg/registry"
+	"github.com/atliliw/microg/registry"
 )
 
 // name 解析器名称，对应 endpoint 中的 scheme

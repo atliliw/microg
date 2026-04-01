@@ -5,7 +5,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	selector2 "microg/server/rpcserver/selector"
+	selector2 "github.com/atliliw/microg/server/rpcserver/selector"
 )
 
 const (

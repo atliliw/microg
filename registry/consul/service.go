@@ -4,7 +4,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"microg/registry"
+	"github.com/atliliw/microg/registry"
 )
 
 type serviceSet struct {

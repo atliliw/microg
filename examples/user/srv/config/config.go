@@ -29,12 +29,12 @@ type GRPCConfig struct {
 }
 
 type ConsulConfig struct {
-	Address               string `yaml:"address"`
-	Enabled               bool   `yaml:"enabled"`
-	HealthCheck           bool   `yaml:"health_check"`
-	Heartbeat             bool   `yaml:"heartbeat"`
-	HealthCheckInterval   int    `yaml:"health_check_interval"`
-	DeregisterCriticalAfter int  `yaml:"deregister_critical_after"`
+	Address                 string `yaml:"address"`
+	Enabled                 bool   `yaml:"enabled"`
+	HealthCheck             bool   `yaml:"health_check"`
+	Heartbeat               bool   `yaml:"heartbeat"`
+	HealthCheckInterval     int    `yaml:"health_check_interval"`
+	DeregisterCriticalAfter int    `yaml:"deregister_critical_after"`
 }
 
 type TracingConfig struct {
@@ -62,6 +62,11 @@ type MySQLConfig struct {
 func (c *MySQLConfig) DSN() string {
 	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		c.Username, c.Password, c.Host, c.Port, c.Database)
+}
+
+func (c *MySQLConfig) NoDatabaseDSN() string {
+	return fmt.Sprintf("%s:%s@tcp(%s:%d)/?charset=utf8mb4&parseTime=True&loc=Local",
+		c.Username, c.Password, c.Host, c.Port)
 }
 
 func Load(path string) (*Config, error) {

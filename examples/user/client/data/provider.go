@@ -6,10 +6,10 @@ import (
 	"log"
 	"time"
 
-	pb "microg/examples/user/api/v1"
-	"microg/examples/user/client/config"
-	"microg/registry/consul"
-	"microg/server/rpcserver"
+	pb "github.com/atliliw/microg/examples/user/api/v1"
+	"github.com/atliliw/microg/examples/user/client/config"
+	"github.com/atliliw/microg/registry/consul"
+	"github.com/atliliw/microg/server/rpcserver"
 
 	"github.com/google/wire"
 	"github.com/hashicorp/consul/api"

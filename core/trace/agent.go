@@ -11,7 +11,7 @@ import (
 	"go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
 
-	"microg/pkg/log"
+	"github.com/atliliw/microg/pkg/log"
 )
 
 /*

@@ -1,4 +1,4 @@
-// Package app 提供基于 Cobra 的 CLI 应用框架
+﻿// Package app 提供基于 Cobra 的 CLI 应用框架
 // 用于处理命令行参数、配置文件加载、版本信息等
 package app
 
@@ -6,16 +6,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/fatih/color"
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
-	cliflag "microg/pkg/common/cli/flag"
-	"microg/pkg/common/cli/globalflag"
-	"microg/pkg/common/term"
-	"microg/pkg/common/version"
-	"microg/pkg/common/version/verflag"
-	"microg/pkg/errors"
-	"microg/pkg/log"
+	cliflag "github.com/atliliw/microg/pkg/common/cli/flag"
+	"github.com/atliliw/microg/pkg/common/cli/globalflag"
+	"github.com/atliliw/microg/pkg/common/term"
+	"github.com/atliliw/microg/pkg/common/version"
+	"github.com/atliliw/microg/pkg/common/version/verflag"
+	"github.com/atliliw/microg/pkg/errors"
+	"github.com/atliliw/microg/pkg/log"
+	"github
 )
 
 var (

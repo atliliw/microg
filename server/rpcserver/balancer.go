@@ -1,8 +1,8 @@
 package rpcserver
 
 import (
-	"microg/registry"
-	"microg/server/rpcserver/selector"
+	"github.com/atliliw/microg/registry"
+	"github.com/atliliw/microg/server/rpcserver/selector"
 
 	"google.golang.org/grpc/balancer"
 	"google.golang.org/grpc/balancer/base"

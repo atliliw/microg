@@ -1,4 +1,4 @@
-﻿// Package v1 contains API types that are common to all versions.
+// Package v1 contains API types that are common to all versions.
 //
 // The package contains two categories of types:
 //   - external (serialized) types that lack their own version (e.g TypeMeta)
@@ -8,4 +8,4 @@
 //
 // In the future, we will probably move these categories of objects into
 // separate packages.
-package v1 // import "microg/pkg/common/meta/v1"
+package v1 // import "github.com/atliliw/microg/pkg/common/meta/v1"

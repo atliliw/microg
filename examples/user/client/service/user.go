@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"microg/examples/user/client/data"
+	"github.com/atliliw/microg/examples/user/client/data"
 )
 
 // UserService 用户业务服务接口

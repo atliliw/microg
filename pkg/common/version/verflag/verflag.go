@@ -9,7 +9,7 @@ import (
 
 	flag "github.com/spf13/pflag"
 
-	"microg/pkg/common/version"
+	"github.com/atliliw/microg/pkg/common/version"
 )
 
 type versionValue int

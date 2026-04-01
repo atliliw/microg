@@ -1,4 +1,4 @@
-﻿package globalflag
+package globalflag
 
 import (
 	"flag"
@@ -9,7 +9,7 @@ import (
 
 	"github.com/spf13/pflag"
 
-	cliflag "microg/pkg/common/cli/flag"
+	cliflag "github.com/atliliw/microg/pkg/common/cli/flag"
 )
 
 func TestAddGlobalFlags(t *testing.T) {

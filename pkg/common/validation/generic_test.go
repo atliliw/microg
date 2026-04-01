@@ -1,10 +1,10 @@
-﻿package validation
+package validation
 
 import (
 	"strings"
 	"testing"
 
-	"microg/pkg/common/validation/field"
+	"github.com/atliliw/microg/pkg/common/validation/field"
 )
 
 func TestIsDNS1123Label(t *testing.T) {

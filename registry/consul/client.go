@@ -11,8 +11,8 @@ import (
 
 	"github.com/hashicorp/consul/api"
 
-	"microg/pkg/log"
-	"microg/registry"
+	"github.com/atliliw/microg/pkg/log"
+	"github.com/atliliw/microg/registry"
 )
 
 // Client is consul client config

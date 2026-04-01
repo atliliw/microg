@@ -1,4 +1,4 @@
-﻿package validation
+package validation
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/go-playground/validator/v10/translations/en"
 
-	"microg/pkg/common/validation/field"
+	"github.com/atliliw/microg/pkg/common/validation/field"
 )
 
 const (

@@ -8,7 +8,7 @@ import (
 
 	"github.com/gosuri/uitable"
 
-	"microg/pkg/common/json"
+	"github.com/atliliw/microg/pkg/common/json"
 )
 
 var (

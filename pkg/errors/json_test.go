@@ -34,7 +34,7 @@ func TestFrameMarshalJSON(t *testing.T) {
 		want string
 	}{{
 		initpc,
-		`^"microg/pkg/errors\.init(\.ializers)? .+/microg/pkg/errors/stack_test.go:\d+"$`,
+		`^"github.com/atliliw/microg/pkg/errors\.init(\.ializers)? .+/microg/pkg/errors/stack_test.go:\d+"$`,
 	}, {
 		0,
 		`^"unknown"$`,

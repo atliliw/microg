@@ -3,7 +3,7 @@ package flag
 import (
 	"crypto/tls"
 	"fmt"
-	"microg/pkg/common/util/sets"
+	"github.com/atliliw/microg/pkg/common/util/sets"
 )
 
 // ciphers maps strings into tls package cipher constants in

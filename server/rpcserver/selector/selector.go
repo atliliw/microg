@@ -2,7 +2,7 @@ package selector
 
 import (
 	"context"
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/pkg/errors"
 )
 
 // ErrNoAvailable is no available node.

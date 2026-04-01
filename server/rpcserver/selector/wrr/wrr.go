@@ -4,8 +4,8 @@ import (
 	"context"
 	"sync"
 
-	selector2 "microg/server/rpcserver/selector"
-	"microg/server/rpcserver/selector/node/direct"
+	selector2 "github.com/atliliw/microg/server/rpcserver/selector"
+	"github.com/atliliw/microg/server/rpcserver/selector/node/direct"
 )
 
 const (

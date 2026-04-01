@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"log"
 
-	"microg/app"
-	"microg/examples/user/srv/config"
-	pb "microg/examples/user/api/v1"
-	"microg/registry/consul"
-	"microg/server/rpcserver"
+	"github.com/atliliw/microg/app"
+	"github.com/atliliw/microg/examples/user/srv/config"
+	pb "github.com/atliliw/microg/examples/user/api/v1"
+	"github.com/atliliw/microg/registry/consul"
+	"github.com/atliliw/microg/server/rpcserver"
 
 	"github.com/google/wire"
 	"github.com/hashicorp/consul/api"

@@ -1,12 +1,12 @@
 package auth
 
 import (
-	"microg/examples/code"
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/examples/code"
+	"github.com/atliliw/microg/pkg/errors"
 	"net/http"
 	"strings"
 
-	"microg/server/restserver/middlewares"
+	"github.com/atliliw/microg/server/restserver/middlewares"
 
 	"github.com/gin-gonic/gin"
 )

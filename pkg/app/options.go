@@ -1,7 +1,7 @@
 package app
 
 import (
-	cliflag "microg/pkg/common/cli/flag"
+	cliflag "github.com/atliliw/microg/pkg/common/cli/flag"
 )
 
 // CliOptions abstracts configuration options for reading parameters from the

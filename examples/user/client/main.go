@@ -1,9 +1,9 @@
 package main
 
 import (
-	"microg/pkg/log"
+	"github.com/atliliw/microg/pkg/log"
 
-	_ "microg/examples/user/code"
+	_ "github.com/atliliw/microg/examples/user/code"
 )
 
 func main() {

@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/pkg/errors"
 )
 
 type Response struct {

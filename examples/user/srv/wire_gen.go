@@ -7,12 +7,12 @@
 package main
 
 import (
+	"github.com/atliliw/microg/examples/user/srv/config"
+	"github.com/atliliw/microg/examples/user/srv/controller"
+	"github.com/atliliw/microg/examples/user/srv/data"
+	"github.com/atliliw/microg/examples/user/srv/server"
+	"github.com/atliliw/microg/examples/user/srv/service"
 	"github.com/google/wire"
-	"microg/examples/user/srv/config"
-	"microg/examples/user/srv/controller"
-	"microg/examples/user/srv/data"
-	"microg/examples/user/srv/server"
-	"microg/examples/user/srv/service"
 )
 
 // Injectors from wire.go:

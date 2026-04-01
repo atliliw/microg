@@ -14,10 +14,10 @@ import (
 	"google.golang.org/grpc/health/grpc_health_v1"
 	"google.golang.org/grpc/reflection"
 
-	apimd "microg/api/metadata"
-	"microg/pkg/host"
-	"microg/pkg/log"
-	srvintc "microg/server/rpcserver/serverinterceptors"
+	apimd "github.com/atliliw/microg/api/metadata"
+	"github.com/atliliw/microg/pkg/host"
+	"github.com/atliliw/microg/pkg/log"
+	srvintc "github.com/atliliw/microg/server/rpcserver/serverinterceptors"
 )
 
 // ServerOption 是 gRPC 服务器的配置函数

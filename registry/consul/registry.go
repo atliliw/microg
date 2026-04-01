@@ -42,7 +42,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"microg/registry"
+	"github.com/atliliw/microg/registry"
 
 	"github.com/hashicorp/consul/api"
 )

@@ -1,10 +1,10 @@
-﻿package jsonutil
+package jsonutil
 
 import (
 	"fmt"
 	"strings"
 
-	"microg/pkg/common/json"
+	"github.com/atliliw/microg/pkg/common/json"
 )
 
 type JSONRawMessage []byte

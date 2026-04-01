@@ -1,4 +1,4 @@
-﻿package field
+package field
 
 import (
 	"fmt"
@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	utilerrors "microg/pkg/errors"
+	utilerrors "github.com/atliliw/microg/pkg/errors"
 
-	"microg/pkg/common/util/sets"
+	"github.com/atliliw/microg/pkg/common/util/sets"
 )
 
 // Error is an implementation of the 'error' interface, which represents a

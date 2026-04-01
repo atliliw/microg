@@ -2,8 +2,8 @@
 
 基于 `github.com/pkg/errors` 包的增强版，增加对 **错误码 (Error Code)** 的支持，完全兼容 `github.com/pkg/errors`。
 
-[![GoDoc](https://godoc.org/microg/pkg/errors?status.svg)](https://godoc.org/microg/pkg/errors)
-[![Go Report Card](https://goreportcard.com/badge/microg/pkg/errors)](https://goreportcard.com/report/microg/pkg/errors)
+[![GoDoc](https://godoc.org/github.com/atliliw/microg/pkg/errors?status.svg)](https://godoc.org/github.com/atliliw/microg/pkg/errors)
+[![Go Report Card](https://goreportcard.com/badge/github.com/atliliw/microg/pkg/errors)](https://goreportcard.com/report/github.com/atliliw/microg/pkg/errors)
 
 ## 特性
 
@@ -19,7 +19,7 @@
 ## 安装
 
 ```bash
-go get microg/pkg/errors
+go get github.com/atliliw/microg/pkg/errors
 ```
 
 ## 快速开始
@@ -31,7 +31,7 @@ package main
 
 import (
     "fmt"
-    "microg/pkg/errors"
+    "github.com/atliliw/microg/pkg/errors"
 )
 
 func main() {
@@ -58,7 +58,7 @@ package main
 
 import (
     "fmt"
-    "microg/pkg/errors"
+    "github.com/atliliw/microg/pkg/errors"
 )
 
 // 定义错误码常量
@@ -131,7 +131,7 @@ func main() {
 package myapp
 
 import (
-    "microg/pkg/errors"
+    "github.com/atliliw/microg/pkg/errors"
     "net/http"
 )
 
@@ -166,7 +166,7 @@ func init() {
 package main
 
 import (
-    "microg/pkg/errors"
+    "github.com/atliliw/microg/pkg/errors"
 )
 
 func main() {
@@ -238,7 +238,7 @@ fmt.Printf("%+v", err)
 ### 安装
 
 ```bash
-go install microg/pkg/tools/codegen@latest
+go install github.com/atliliw/microg/pkg/tools/codegen@latest
 ```
 
 ### 使用方法
@@ -379,7 +379,7 @@ const (
 
 ## 与 pkg/errors 兼容性
 
-| 功能 | pkg/errors | microg/pkg/errors |
+| 功能 | pkg/errors | github.com/atliliw/microg/pkg/errors |
 |------|-----------|-------------------|
 | `New` | ✅ | ✅ |
 | `Errorf` | ✅ | ✅ |
@@ -402,7 +402,7 @@ const (
 import "github.com/pkg/errors"
 
 // 之后
-import "microg/pkg/errors"
+import "github.com/atliliw/microg/pkg/errors"
 ```
 
 ## 性能
@@ -418,7 +418,3 @@ BenchmarkWithCode-8             3000000    380 ns/op   144 B/op    2 allocs/op
 ## 参考设计
 
 错误码设计参考：[marmotedu/sample-code](https://github.com/marmotedu/sample-code)
-
-## License
-
-MIT License

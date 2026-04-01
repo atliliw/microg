@@ -1,4 +1,4 @@
-﻿package idutil
+package idutil
 
 import (
 	"crypto/rand"
@@ -6,8 +6,8 @@ import (
 	"github.com/sony/sonyflake"
 	hashids "github.com/speps/go-hashids"
 
-	"microg/pkg/common/util/iputil"
-	"microg/pkg/common/util/stringutil"
+	"github.com/atliliw/microg/pkg/common/util/iputil"
+	"github.com/atliliw/microg/pkg/common/util/stringutil"
 )
 
 // Defiens alphabet.

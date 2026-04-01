@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright 2014 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,4 +16,4 @@ limitations under the License.
 
 // Package wait provides tools for polling or listening for changes
 // to a condition.
-package wait // import "microg/pkg/common/util/wait"
+package wait // import "github.com/atliliw/microg/pkg/common/util/wait"

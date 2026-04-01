@@ -5,9 +5,9 @@ import (
 	"os"
 	"time"
 
-	"microg/registry"
-	"microg/server/restserver"
-	"microg/server/rpcserver"
+	"github.com/atliliw/microg/registry"
+	"github.com/atliliw/microg/server/restserver"
+	"github.com/atliliw/microg/server/rpcserver"
 )
 
 // Option 是配置函数，用于修改 options 结构体

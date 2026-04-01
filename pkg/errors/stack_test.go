@@ -32,7 +32,7 @@ func TestFrameFormat(t *testing.T) {
 	}, {
 		initpc,
 		"%+s",
-		"microg/pkg/errors.init\n" +
+		"github.com/atliliw/microg/pkg/errors.init\n" +
 			"\t.+/microg/pkg/errors/stack_test.go",
 	}, {
 		0,
@@ -79,7 +79,7 @@ func TestFrameFormat(t *testing.T) {
 	}, {
 		initpc,
 		"%+v",
-		"microg/pkg/errors.init\n" +
+		"github.com/atliliw/microg/pkg/errors.init\n" +
 			"\t.+/microg/pkg/errors/stack_test.go:9",
 	}, {
 		0,
@@ -98,7 +98,7 @@ func TestFuncname(t *testing.T) {
 	}{
 		{"", ""},
 		{"runtime.main", "main"},
-		{"microg/pkg/errors.funcname", "funcname"},
+		{"github.com/atliliw/microg/pkg/errors.funcname", "funcname"},
 		{"funcname", "funcname"},
 		{"io.copyBuffer", "copyBuffer"},
 		{"main.(*R).Write", "(*R).Write"},
@@ -119,24 +119,24 @@ func TestStackTrace(t *testing.T) {
 		want []string
 	}{{
 		New("ooh"), []string{
-			"microg/pkg/errors.TestStackTrace\n" +
+			"github.com/atliliw/microg/pkg/errors.TestStackTrace\n" +
 				"\t.+/microg/pkg/errors/stack_test.go:121",
 		},
 	}, {
 		Wrap(New("ooh"), "ahh"), []string{
-			"microg/pkg/errors.TestStackTrace\n" +
+			"github.com/atliliw/microg/pkg/errors.TestStackTrace\n" +
 				"\t.+/microg/pkg/errors/stack_test.go:126", // this is the stack of Wrap, not New
 		},
 	}, {
 		Cause(Wrap(New("ooh"), "ahh")), []string{
-			"microg/pkg/errors.TestStackTrace\n" +
+			"github.com/atliliw/microg/pkg/errors.TestStackTrace\n" +
 				"\t.+/microg/pkg/errors/stack_test.go:131", // this is the stack of New
 		},
 	}, {
 		func() error { return New("ooh") }(), []string{
 			`microg/pkg/errors.TestStackTrace.func1` +
 				"\n\t.+/microg/pkg/errors/stack_test.go:136", // this is the stack of New
-			"microg/pkg/errors.TestStackTrace\n" +
+			"github.com/atliliw/microg/pkg/errors.TestStackTrace\n" +
 				"\t.+/microg/pkg/errors/stack_test.go:136", // this is the stack of New's caller
 		},
 	}, {
@@ -149,7 +149,7 @@ func TestStackTrace(t *testing.T) {
 				"\n\t.+/microg/pkg/errors/stack_test.go:145", // this is the stack of Errorf
 			`microg/pkg/errors.TestStackTrace.func2` +
 				"\n\t.+/microg/pkg/errors/stack_test.go:146", // this is the stack of Errorf's caller
-			"microg/pkg/errors.TestStackTrace\n" +
+			"github.com/atliliw/microg/pkg/errors.TestStackTrace\n" +
 				"\t.+/microg/pkg/errors/stack_test.go:147", // this is the stack of Errorf's caller's caller
 		},
 	}}
@@ -225,9 +225,9 @@ func TestStackTraceFormat(t *testing.T) {
 		stackTrace()[:2],
 		"%+v",
 		"\n" +
-			"microg/pkg/errors.stackTrace\n" +
+			"github.com/atliliw/microg/pkg/errors.stackTrace\n" +
 			"\t.+/microg/pkg/errors/stack_test.go:174\n" +
-			"microg/pkg/errors.TestStackTraceFormat\n" +
+			"github.com/atliliw/microg/pkg/errors.TestStackTraceFormat\n" +
 			"\t.+/microg/pkg/errors/stack_test.go:225",
 	}, {
 		stackTrace()[:2],

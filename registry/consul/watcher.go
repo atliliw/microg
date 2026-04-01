@@ -3,7 +3,7 @@ package consul
 import (
 	"context"
 
-	"microg/registry"
+	"github.com/atliliw/microg/registry"
 )
 
 type watcher struct {

@@ -4,17 +4,17 @@ import (
 	"context"
 	"fmt"
 	"github.com/penglongli/gin-metrics/ginmetrics"
-	"microg/pkg/errors"
+	"github.com/atliliw/microg/pkg/errors"
 	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
 	ut "github.com/go-playground/universal-translator"
 
-	"microg/pkg/log"
-	mws "microg/server/restserver/middlewares"
-	"microg/server/restserver/pprof"
-	"microg/server/restserver/validation"
+	"github.com/atliliw/microg/pkg/log"
+	mws "github.com/atliliw/microg/server/restserver/middlewares"
+	"github.com/atliliw/microg/server/restserver/pprof"
+	"github.com/atliliw/microg/server/restserver/validation"
 )
 
 type JwtInfo struct {

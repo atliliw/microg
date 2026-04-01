@@ -4,11 +4,11 @@
 package main
 
 import (
-	"microg/examples/user/client/config"
-	"microg/examples/user/client/data"
-	"microg/examples/user/client/server"
-	"microg/examples/user/client/service"
-	"microg/examples/user/client/controller"
+	"github.com/atliliw/microg/examples/user/client/config"
+	"github.com/atliliw/microg/examples/user/client/controller"
+	"github.com/atliliw/microg/examples/user/client/data"
+	"github.com/atliliw/microg/examples/user/client/server"
+	"github.com/atliliw/microg/examples/user/client/service"
 
 	"github.com/google/wire"
 )

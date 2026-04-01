@@ -26,7 +26,7 @@ func TestFormatNew(t *testing.T) {
 		New("error"),
 		"%+v",
 		"error\n" +
-			"microg/pkg/errors.TestFormatNew\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatNew\n" +
 			"\t.+/microg/pkg/errors/format_test.go:26",
 	}, {
 		New("error"),
@@ -56,7 +56,7 @@ func TestFormatErrorf(t *testing.T) {
 		Errorf("%s", "error"),
 		"%+v",
 		"error\n" +
-			"microg/pkg/errors.TestFormatErrorf\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatErrorf\n" +
 			"\t.+/microg/pkg/errors/format_test.go:56",
 	}}
 
@@ -82,7 +82,7 @@ func TestFormatWrap(t *testing.T) {
 		Wrap(New("error"), "error2"),
 		"%+v",
 		"error\n" +
-			"microg/pkg/errors.TestFormatWrap\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWrap\n" +
 			"\t.+/microg/pkg/errors/format_test.go:82",
 	}, {
 		Wrap(io.EOF, "error"),
@@ -97,14 +97,14 @@ func TestFormatWrap(t *testing.T) {
 		"%+v",
 		"EOF\n" +
 			"error\n" +
-			"microg/pkg/errors.TestFormatWrap\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWrap\n" +
 			"\t.+/microg/pkg/errors/format_test.go:96",
 	}, {
 		Wrap(Wrap(io.EOF, "error1"), "error2"),
 		"%+v",
 		"EOF\n" +
 			"error1\n" +
-			"microg/pkg/errors.TestFormatWrap\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWrap\n" +
 			"\t.+/microg/pkg/errors/format_test.go:103\n",
 	}, {
 		Wrap(New("error with space"), "context"),
@@ -135,7 +135,7 @@ func TestFormatWrapf(t *testing.T) {
 		"%+v",
 		"EOF\n" +
 			"error2\n" +
-			"microg/pkg/errors.TestFormatWrapf\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWrapf\n" +
 			"\t.+/microg/pkg/errors/format_test.go:134",
 	}, {
 		Wrapf(New("error"), "error%d", 2),
@@ -149,7 +149,7 @@ func TestFormatWrapf(t *testing.T) {
 		Wrapf(New("error"), "error%d", 2),
 		"%+v",
 		"error\n" +
-			"microg/pkg/errors.TestFormatWrapf\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWrapf\n" +
 			"\t.+/microg/pkg/errors/format_test.go:149",
 	}}
 
@@ -175,7 +175,7 @@ func TestFormatWithStack(t *testing.T) {
 		WithStack(io.EOF),
 		"%+v",
 		[]string{"EOF",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:175"},
 	}, {
 		WithStack(New("error")),
@@ -189,36 +189,36 @@ func TestFormatWithStack(t *testing.T) {
 		WithStack(New("error")),
 		"%+v",
 		[]string{"error",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:189",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:189"},
 	}, {
 		WithStack(WithStack(io.EOF)),
 		"%+v",
 		[]string{"EOF",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:197",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:197"},
 	}, {
 		WithStack(WithStack(Wrapf(io.EOF, "message"))),
 		"%+v",
 		[]string{"EOF",
 			"message",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:205",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:205",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:205"},
 	}, {
 		WithStack(Errorf("error%d", 1)),
 		"%+v",
 		[]string{"error1",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:216",
-			"microg/pkg/errors.TestFormatWithStack\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithStack\n" +
 				"\t.+/microg/pkg/errors/format_test.go:216"},
 	}}
 
@@ -245,7 +245,7 @@ func TestFormatWithMessage(t *testing.T) {
 		"%+v",
 		[]string{
 			"error",
-			"microg/pkg/errors.TestFormatWithMessage\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithMessage\n" +
 				"\t.+/microg/pkg/errors/format_test.go:244",
 			"error2"},
 	}, {
@@ -272,13 +272,13 @@ func TestFormatWithMessage(t *testing.T) {
 		Wrap(WithMessage(io.EOF, "error1"), "error2"),
 		"%+v",
 		[]string{"EOF", "error1", "error2",
-			"microg/pkg/errors.TestFormatWithMessage\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithMessage\n" +
 				"\t.+/microg/pkg/errors/format_test.go:272"},
 	}, {
 		WithMessage(Errorf("error%d", 1), "error2"),
 		"%+v",
 		[]string{"error1",
-			"microg/pkg/errors.TestFormatWithMessage\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithMessage\n" +
 				"\t.+/microg/pkg/errors/format_test.go:278",
 			"error2"},
 	}, {
@@ -286,7 +286,7 @@ func TestFormatWithMessage(t *testing.T) {
 		"%+v",
 		[]string{
 			"EOF",
-			"microg/pkg/errors.TestFormatWithMessage\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithMessage\n" +
 				"\t.+/microg/pkg/errors/format_test.go:285",
 			"error"},
 	}, {
@@ -294,10 +294,10 @@ func TestFormatWithMessage(t *testing.T) {
 		"%+v",
 		[]string{
 			"EOF",
-			"microg/pkg/errors.TestFormatWithMessage\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithMessage\n" +
 				"\t.+/microg/pkg/errors/format_test.go:293",
 			"inside-error",
-			"microg/pkg/errors.TestFormatWithMessage\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWithMessage\n" +
 				"\t.+/microg/pkg/errors/format_test.go:293",
 			"outside-error"},
 	}}
@@ -314,11 +314,11 @@ func TestFormatGeneric(t *testing.T) {
 	}{
 		{New("new-error"), []string{
 			"new-error",
-			"microg/pkg/errors.TestFormatGeneric\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatGeneric\n" +
 				"\t.+/microg/pkg/errors/format_test.go:315"},
 		}, {Errorf("errorf-error"), []string{
 			"errorf-error",
-			"microg/pkg/errors.TestFormatGeneric\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatGeneric\n" +
 				"\t.+/microg/pkg/errors/format_test.go:319"},
 		}, {errors.New("errors-new-error"), []string{
 			"errors-new-error"},
@@ -332,21 +332,21 @@ func TestFormatGeneric(t *testing.T) {
 		}, {
 			func(err error) error { return WithStack(err) },
 			[]string{
-				"microg/pkg/errors.(func·002|TestFormatGeneric.func2)\n\t" +
+				"github.com/atliliw/microg/pkg/errors.(func·002|TestFormatGeneric.func2)\n\t" +
 					".+/microg/pkg/errors/format_test.go:333",
 			},
 		}, {
 			func(err error) error { return Wrap(err, "wrap-error") },
 			[]string{
 				"wrap-error",
-				"microg/pkg/errors.(func·003|TestFormatGeneric.func3)\n\t" +
+				"github.com/atliliw/microg/pkg/errors.(func·003|TestFormatGeneric.func3)\n\t" +
 					".+/microg/pkg/errors/format_test.go:339",
 			},
 		}, {
 			func(err error) error { return Wrapf(err, "wrapf-error%d", 1) },
 			[]string{
 				"wrapf-error1",
-				"microg/pkg/errors.(func·004|TestFormatGeneric.func4)\n\t" +
+				"github.com/atliliw/microg/pkg/errors.(func·004|TestFormatGeneric.func4)\n\t" +
 					".+/microg/pkg/errors/format_test.go:346",
 			},
 		},
@@ -373,9 +373,9 @@ func TestFormatWrappedNew(t *testing.T) {
 		wrappedNew("error"),
 		"%+v",
 		"error\n" +
-			"microg/pkg/errors.wrappedNew\n" +
+			"github.com/atliliw/microg/pkg/errors.wrappedNew\n" +
 			"\t.+/microg/pkg/errors/format_test.go:364\n" +
-			"microg/pkg/errors.TestFormatWrappedNew\n" +
+			"github.com/atliliw/microg/pkg/errors.TestFormatWrappedNew\n" +
 			"\t.+/microg/pkg/errors/format_test.go:373",
 	}}
 
