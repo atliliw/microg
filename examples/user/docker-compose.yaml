@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  # Consul - 服务注册与发现
+  consul:
+    image: consul:1.15
+    container_name: user-consul
+    hostname: consul
+    ports:
+      - "8500:8500"      # HTTP API & Web UI
+      - "8600:8600/udp"  # DNS接口
+    command: agent -server -ui -bootstrap-expect=1 -client=0.0.0.0
+    restart: unless-stopped
+    networks:
+      - user-network
+
+  # MySQL - 数据库
+  mysql:
+    image: mysql:8.0
+    container_name: user-mysql
+    hostname: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: microg_user
+      TZ: Asia/Shanghai
+    volumes:
+      - user_mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: unless-stopped
+    networks:
+      - user-network
+
+  # Jaeger - 链路追踪（可选）
+  jaeger:
+    image: jaegertracing/all-in-one:1.50
+    container_name: user-jaeger
+    hostname: jaeger
+    ports:
+      - "14268:14268"  # HTTP collector
+      - "16686:16686"  # Web UI
+      - "6831:6831/udp"  # UDP agent
+    environment:
+      COLLECTOR_ZIPKIN_HOST_PORT: :9411
+    restart: unless-stopped
+    networks:
+      - user-network
+    profiles:
+      - tracing  # 使用 --profile tracing 启动
+
+  # Redis - 缓存（可选）
+  redis:
+    image: redis:7-alpine
+    container_name: user-redis
+    hostname: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - user_redis_data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    networks:
+      - user-network
+    profiles:
+      - cache  # 使用 --profile cache 启动
+
+volumes:
+  user_mysql_data:
+    name: user_mysql_data
+  user_redis_data:
+    name: user_redis_data
+
+networks:
+  user-network:
+    name: user-network
+    driver: bridge
