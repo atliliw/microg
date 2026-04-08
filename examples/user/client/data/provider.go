@@ -45,6 +45,7 @@ func NewUserClient(cfg *config.Config, r *consul.Registry) pb.UserClient {
 		rpcserver.WithEndpoint(serviceName),
 		rpcserver.WithDiscovery(r),
 		rpcserver.WithClientTimeout(5*time.Second),
+		rpcserver.WithBalancerName("selector"), // 使用自定义 selector 负载均衡器
 	)
 	if err != nil {
 		log.Fatalf("连接 gRPC 服务失败: %v", err)

@@ -51,13 +51,13 @@ func createDatabaseIfNotExists(database string, noDatabaseDSN string) error {
 	}
 	defer sqlDB.Close()
 
-	var exists int
+	var exists string
 	query := fmt.Sprintf("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '%s'", database)
 	if err := sqlDB.QueryRow(query).Scan(&exists); err != nil && err != sql.ErrNoRows {
 		return fmt.Errorf("检查数据库是否存在失败: %w", err)
 	}
 
-	if exists == 0 {
+	if exists == "" {
 		createSQL := fmt.Sprintf("CREATE DATABASE `%s` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci", database)
 		if _, err := sqlDB.Exec(createSQL); err != nil {
 			return fmt.Errorf("创建数据库失败: %w", err)
