@@ -5,7 +5,7 @@ import (
 	"sync/atomic"
 )
 
-// Default is composite selector.
+// Default 是组合选择器。
 type Default struct {
 	NodeBuilder WeightedNodeBuilder
 	Balancer    Balancer
@@ -13,7 +13,7 @@ type Default struct {
 	nodes atomic.Value
 }
 
-// Select is select one node.
+// Select 选择一个节点。
 func (d *Default) Select(ctx context.Context) (selected Node, done DoneFunc, err error) {
 	var (
 		candidates []WeightedNode
@@ -38,23 +38,23 @@ func (d *Default) Select(ctx context.Context) (selected Node, done DoneFunc, err
 	return wn.Raw(), done, nil
 }
 
-// Apply update nodes info.
+// Apply 更新节点信息。
 func (d *Default) Apply(nodes []Node) {
 	weightedNodes := make([]WeightedNode, 0, len(nodes))
 	for _, n := range nodes {
 		weightedNodes = append(weightedNodes, d.NodeBuilder.Build(n))
 	}
-	// TODO: Do not delete unchanged nodes
+	// TODO: 不要删除未变更的节点
 	d.nodes.Store(weightedNodes)
 }
 
-// DefaultBuilder is de
+// DefaultBuilder 是默认选择器构建器。
 type DefaultBuilder struct {
 	Node     WeightedNodeBuilder
 	Balancer BalancerBuilder
 }
 
-// Build create builder
+// Build 创建选择器
 func (db *DefaultBuilder) Build() Selector {
 	return &Default{
 		NodeBuilder: db.Node,

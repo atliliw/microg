@@ -87,8 +87,13 @@ func WithClientOptions(opts ...grpc.DialOption) ClientOption {
 
 // WithBalancerName 设置负载均衡策略
 // 常用值:
-//   - round_robin: 轮询（默认）
-//   - pick_first: 选择第一个可用地址
+//   - round_robin: 轮询（默认，gRPC 内置）
+//   - pick_first: 选择第一个可用地址（gRPC 内置）
+//   - selector: 自定义负载均衡器（需先调用 InitBuilder() 和 SetGlobalSelector()）
+//
+// 使用自定义 selector 时，需要在创建连接前：
+//  1. 调用 rpcserver.InitBuilder() 注册 balancer
+//  2. 调用 selector.SetGlobalSelector() 设置策略（p2c/wrr/random）
 func WithBalancerName(name string) ClientOption {
 	return func(o *clientOptions) {
 		o.balancerName = name

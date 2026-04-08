@@ -17,18 +17,18 @@ var (
 	_ selector2.WeightedNodeBuilder = &Builder{}
 )
 
-// Node is endpoint instance
+// Node 是端点实例
 type Node struct {
 	selector2.Node
 
-	// last lastPick timestamp
+	// lastPick 上次选择时间戳
 	lastPick int64
 }
 
-// Builder is direct node builder
+// Builder 是直连节点构建器
 type Builder struct{}
 
-// Build create node
+// Build 创建节点
 func (*Builder) Build(n selector2.Node) selector2.WeightedNode {
 	return &Node{Node: n, lastPick: 0}
 }
@@ -39,7 +39,7 @@ func (n *Node) Pick() selector2.DoneFunc {
 	return func(ctx context.Context, di selector2.DoneInfo) {}
 }
 
-// Weight is node effective weight
+// Weight 返回节点有效权重
 func (n *Node) Weight() float64 {
 	if n.InitialWeight() != nil {
 		return float64(*n.InitialWeight())

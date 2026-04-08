@@ -6,7 +6,7 @@ import (
 	"github.com/atliliw/microg/registry"
 )
 
-// DefaultNode is selector node
+// DefaultNode 是选择器节点
 type DefaultNode struct {
 	scheme   string
 	addr     string
@@ -16,37 +16,37 @@ type DefaultNode struct {
 	metadata map[string]string
 }
 
-// Scheme is node scheme
+// Scheme 返回节点协议
 func (n *DefaultNode) Scheme() string {
 	return n.scheme
 }
 
-// Address is node address
+// Address 返回节点地址
 func (n *DefaultNode) Address() string {
 	return n.addr
 }
 
-// ServiceName is node serviceName
+// ServiceName 返回节点服务名称
 func (n *DefaultNode) ServiceName() string {
 	return n.name
 }
 
-// InitialWeight is node initialWeight
+// InitialWeight 返回节点初始权重
 func (n *DefaultNode) InitialWeight() *int64 {
 	return n.weight
 }
 
-// Version is node version
+// Version 返回节点版本
 func (n *DefaultNode) Version() string {
 	return n.version
 }
 
-// Metadata is node metadata
+// Metadata 返回节点元数据
 func (n *DefaultNode) Metadata() map[string]string {
 	return n.metadata
 }
 
-// NewNode new node
+// NewNode 创建新节点
 func NewNode(scheme, addr string, ins *registry.ServiceInstance) Node {
 	n := &DefaultNode{
 		scheme: scheme,

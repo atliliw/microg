@@ -13,25 +13,25 @@ import (
 
 const (
 	forcePick = time.Second * 3
-	// Name is balancer name
+	// Name 是负载均衡器名称
 	Name = "p2c"
 )
 
 var _ selector2.Balancer = &Balancer{}
 
-// New creates a p2c selector.
+// New 创建一个 p2c 选择器。
 func New() selector2.Selector {
 	return NewBuilder().Build()
 }
 
-// Balancer is p2c selector.
+// Balancer 是 p2c 选择器。
 type Balancer struct {
 	mu     sync.Mutex
 	r      *rand.Rand
 	picked int64
 }
 
-// choose two distinct nodes.
+// 选择两个不同的节点。
 func (s *Balancer) prePick(nodes []selector2.WeightedNode) (nodeA selector2.WeightedNode, nodeB selector2.WeightedNode) {
 	s.mu.Lock()
 	a := s.r.Intn(len(nodes))
@@ -44,7 +44,7 @@ func (s *Balancer) prePick(nodes []selector2.WeightedNode) (nodeA selector2.Weig
 	return
 }
 
-// Pick pick a node.
+// Pick 选择一个节点。
 func (s *Balancer) Pick(ctx context.Context, nodes []selector2.WeightedNode) (selector2.WeightedNode, selector2.DoneFunc, error) {
 	if len(nodes) == 0 {
 		return nil, nil, selector2.ErrNoAvailable
@@ -56,15 +56,15 @@ func (s *Balancer) Pick(ctx context.Context, nodes []selector2.WeightedNode) (se
 
 	var pc, upc selector2.WeightedNode
 	nodeA, nodeB := s.prePick(nodes)
-	// meta.Weight is the weight set by the service publisher in discovery
+	// meta.Weight 是服务发布者在服务发现中设置的权重
 	if nodeB.Weight() > nodeA.Weight() {
 		pc, upc = nodeB, nodeA
 	} else {
 		pc, upc = nodeA, nodeB
 	}
 
-	// If the failed node has never been selected once during forceGap, it is forced to be selected once
-	// Take advantage of forced opportunities to trigger updates of success rate and delay
+	// 如果失败节点在 forceGap 时间内从未被选择过，则强制选择一次
+	// 利用强制机会触发成功率和延迟的更新
 	if upc.PickElapsed() > forcePick && atomic.CompareAndSwapInt64(&s.picked, 0, 1) {
 		pc = upc
 		atomic.StoreInt64(&s.picked, 0)
@@ -73,7 +73,7 @@ func (s *Balancer) Pick(ctx context.Context, nodes []selector2.WeightedNode) (se
 	return pc, done, nil
 }
 
-// NewBuilder returns a selector builder with p2c balancer
+// NewBuilder 返回带有 p2c 负载均衡器的选择器构建器
 func NewBuilder() selector2.Builder {
 	return &selector2.DefaultBuilder{
 		Balancer: &Builder{},
@@ -81,10 +81,10 @@ func NewBuilder() selector2.Builder {
 	}
 }
 
-// Builder is p2c builder
+// Builder 是 p2c 构建器
 type Builder struct{}
 
-// Build creates Balancer
+// Build 创建负载均衡器
 func (b *Builder) Build() selector2.Balancer {
 	return &Balancer{r: rand.New(rand.NewSource(time.Now().UnixNano()))}
 }
